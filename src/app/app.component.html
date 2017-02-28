@@ -8,34 +8,35 @@
         <div class="form-group">
           <div class="input-group calendar-input">
             <input class="form-control" placeholder="YYYY-MM-DD"
-                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                   name="dp" [(ngModel)]="selectedDate" ngbDatepicker #d="ngbDatepicker"
+                   (navigate)="date = $event.next" >
+                   <!-- <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker> -->
             <div class="input-group-addon calendar-button" (click)="d.toggle()" >
               <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer; background-color: #fff;"/>
             </div>
           </div>
         </div>
       </form>
+        <on-date-changes [newdate]="selectedDate" (studentsStore)="onSelectDateEvent($event)"></on-date-changes>
+      <!-- <hr>
+      <pre>Model: {{ selectedDate | json }}</pre> -->
   </div>
   <div class="col-2 debug">
-    <button type="button" class="btn btn-success">EXPAND ALL &nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-success" (click)="showAll()">EXPAND ALL &nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i></button>
   </div>
 </div>
 
 <div class="row" style="margin-top: 30px;">
    <div class="col debug">
-<!-- <hr/>
-<pre>Model: {{ selectedDate | json }}</pre> -->
- <!-- <ul class="heroes">
-<li *ngFor="let person of students"
-  [class.selected]="person === selectedStudent"
-  (click)="onSelect(person)">
-  <span class="badge">{{person.id}}</span> {{person.name}}
-</li>
-</ul> -->
-<div *ngFor="let person of students">
-  <app-user-time-sheet [student]="person"></app-user-time-sheet>
+    <div *ngFor="let person of students">
+      <app-user-time-sheet [student]="person" [expand]="isCollapsedContent"></app-user-time-sheet>
+    </div>
+  </div>
 </div>
-
-</div>
+<div class="row" style="margin-top: 30px;">
+   <div class="col debug">
+     <button type="button" class="btn btn-success btn-save" (click)="saveStorage(selectedDate)">
+       SAVE &nbsp;<i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i></button>
+  </div>
 </div>
 </div>

@@ -30,26 +30,27 @@ This App is created by [Jak Ratiwanich][98e89d95]
 ###Out of Scope:
 1) No authentication and authorization required.
 
-2) Page Responsive to mobile devices will not be tested.
+2) Page Responsive to mobile devices will not be tested. Timesheet form can only be scaled to 600 pixel in width minimum.
 
 ###Bonus features:
 1) When selecting a new date from the calendar, user will be able to add student from a `student dropdown` input box.
 
-#NOTE
+##Importan Test Cases
+1) mock up student list will ONLY be populated on the current date
+
+#My Development server and demo
+1) For viewing on my demo server:
+goto http://dev.triangleitc.com/guess/
+
+2) For running locally -
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+3) Use your own server - copy and deploy the entire `dist` folder to your web server
+
+## NOTE
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.
 
 To get more info on the Angular CLI use `ng help`
-
-## Development server
-For running locally -
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-For viewing on my demo server:
-goto http://dev.triangleitc.com/guess/
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
 ## Build
 
@@ -66,4 +67,4 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 
- or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Should you need help compiling or running this App, email me from Github or call me at +1-949-346-2989. Thank you!

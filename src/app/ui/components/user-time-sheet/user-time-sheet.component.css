@@ -18,17 +18,42 @@
   width: 600px;
 }
 
-.btn-ts-student{
+.btn-ts-student-in{
     width: 70%;
     text-align: left;
 }
-.btn-ts-student:before {
+.btn-ts-student-in:before {
     font-family: FontAwesome;
     top:0;
     left:5px;
     padding-right:10px;
     content: "\f090";
+    color: red;
  }
+
+ .btn-ts-student-out{
+     width: 70%;
+     text-align: left;
+ }
+ .btn-ts-student-out:before {
+     font-family: FontAwesome;
+     top:0;
+     left:5px;
+     padding-right:10px;
+     content: "\f08b";
+  }
+
+  .btn-ts-student-empty{
+      width: 70%;
+      text-align: left;
+  }
+  .btn-ts-student-empty:before {
+      font-family: FontAwesome;
+      top:0;
+      left:5px;
+      padding-right:10px;
+      content: "\f0fe";
+   }
 
  .btn-ts-add:before {
      font-family: FontAwesome;

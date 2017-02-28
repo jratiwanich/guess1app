@@ -18,6 +18,11 @@
   /*width: 600px;*/
   margin: auto;
 }
+.btn-save{
+  width: 300px;
+  margin: auto;
+  float: right;
+}
 .debug{
   border: 0px solid yellow;
 }

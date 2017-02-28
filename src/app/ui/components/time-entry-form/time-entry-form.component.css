@@ -9,7 +9,6 @@
   background-color: #000000;
   border-bottom: 1px solid #333;
 
-
   /*-webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);*/
@@ -21,12 +20,11 @@
 
 }
 .btn-group{
-
   vertical-align: middle;
   margin-top: auto;
   margin-bottom: auto;
-
 }
+
 .btn-circle
   {
       /*width: 30px;
@@ -50,9 +48,9 @@ line-height: 100px;
 
 .time-label{
   line-height: 100px;
-  text-align: center;
+  text-align:left;
   min-width: 60px;
-  margin: auto auto;
+  margin-left: -5px;
 }
 
 .debug{

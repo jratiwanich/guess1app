@@ -1,5 +1,7 @@
-import { Component, Directive,OnChanges,SimpleChanges, Input,ViewChild, Attribute} from '@angular/core';
-import {TimeEntry,TimeStructure} from '../../../service/time.service';
+import { Component, Directive,OnChanges,
+         SimpleChanges, Input,ViewChild,
+         Attribute,Output, EventEmitter} from '@angular/core';
+import {TimeEntry,TimeStructure} from '../../../service/timeentry';
 
 
 
@@ -9,7 +11,8 @@ import {TimeEntry,TimeStructure} from '../../../service/time.service';
 export class OnChangesComponent implements OnChanges {
   @Input() logIn: TimeStructure;
   @Input() logOut: TimeStructure;
-  iTime = new TimeEntry(this.logIn,this.logOut);
+
+  //iTime = new TimeEntry(this.logIn,this.logOut);
 
   changeLog: string[] = [];
 
@@ -22,10 +25,10 @@ export class OnChangesComponent implements OnChanges {
       console.debug(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
       console.debug("logOut time="+JSON.stringify(this.logIn));
       console.debug("logOut time="+JSON.stringify(this.logOut));
-      console.debug("my time="+JSON.stringify(this.iTime));
-      if(JSON.stringify(this.iTime.inTime) >= JSON.stringify(this.iTime.outTime)){
-        console.log("THAT cannot be >= "+JSON.stringify(this.iTime.outTime));
-      }
+      // console.debug("my time="+JSON.stringify(this.iTime));
+      // if(JSON.stringify(this.iTime.inTime) >= JSON.stringify(this.iTime.outTime)){
+      //   console.log("THAT cannot be >= "+JSON.stringify(this.iTime.outTime));
+      // }
     }
   }
 
@@ -33,30 +36,35 @@ export class OnChangesComponent implements OnChanges {
 }
 
 /**************************************************/
+const now = new Date();
 @Component({
   selector: 'app-time-entry-form',
   templateUrl: './time-entry-form.component.html',
   styleUrls: ['./time-entry-form.component.css']
 })
-export class TimeEntryFormComponent{
-  kidTime: TimeEntry;
+export class TimeEntryFormComponent  {
+
+  currentTime: TimeEntry;
   title = 'OnChanges';
-  currentTime : Date;
+  outNow: boolean = false;
+  @Input() timelog: TimeEntry;
+  @Output() timeUpdate = new EventEmitter();
   @ViewChild(OnChangesComponent) childView: OnChangesComponent;
 
   constructor() {
     this.reset();
   }
+  // timeChange(){
+  //   console.debug("time change");
+  // }
+  removeTime(item){
+    console.debug("removing item"+JSON.stringify(item));
+    this.timeUpdate.emit(item);
+
+  }
+
   reset() {
-    // reset time
-    this.currentTime =  new Date();
-
-
-    this.kidTime = new TimeEntry((new TimeStructure(this.currentTime.getHours(),
-                                                    this.currentTime.getHours(),
-                                                    this.currentTime.getSeconds())),
-                                (new TimeStructure(0,0,0)));
-    if (this.childView) { this.childView.reset(); }
+      if (this.childView) { this.childView.reset(); }
     console.debug("resetting in constructor");
   }
 }

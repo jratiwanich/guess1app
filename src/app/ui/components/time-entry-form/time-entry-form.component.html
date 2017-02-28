@@ -1,14 +1,12 @@
 
-
-
-  <div class="container time-box">
+  <div *ngIf="timelog" class="container time-box">
     <div class="row">
       <div class="col-1 debug">
         <p class="time-label">IN</p>
       </div>
       <div class="col-5 time-picker debug">
 
-        <ngb-timepicker [(ngModel)]="kidTime.inTime" [meridian]="true"></ngb-timepicker>
+        <ngb-timepicker [(ngModel)]="timelog.inTime"  [meridian]="true"></ngb-timepicker>
 
       </div>
       <div class="col-1 debug">
@@ -16,13 +14,13 @@
       </div>
 
       <div class="col-4 time-picker debug">
-        <ngb-timepicker [(ngModel)]="kidTime.outTime" [meridian]="true"></ngb-timepicker>
+        <ngb-timepicker [(ngModel)]="timelog.outTime" [meridian]="true"></ngb-timepicker>
       </div>
       <div class="col-1 debug">
 
-          <a class="btn-circle" href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+          <a class="btn-circle" href="#" (click)="removeTime(timelog)"><i class="fa fa-trash-o fa-lg"></i></a>
 
       </div>
     </div>
-      <on-changes  [logIn]="kidTime.inTime" [logOut]="kidTime.outTime"></on-changes>
+      <on-changes  [logIn]="timelog.inTime" [logOut]="timelog.outTime"></on-changes>
   </div>

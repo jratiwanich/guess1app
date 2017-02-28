@@ -6,16 +6,19 @@ import { HttpModule,JsonpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import { NgbdDatepickerPopup } from './datepicker-popup';
 
-import { AppComponent } from './app.component';
+import { AppComponent ,OnDateChangesComponent} from './app.component';
 import { TimeEntryFormComponent,OnChangesComponent } from './ui/components/time-entry-form/time-entry-form.component';
 import { UserTimeSheetComponent } from './ui/components/user-time-sheet/user-time-sheet.component';
+import {CollapseDirective} from './ui/directives/collapse.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimeEntryFormComponent,
     OnChangesComponent,
-    UserTimeSheetComponent
+    OnDateChangesComponent,
+    UserTimeSheetComponent,
+    CollapseDirective
   ],
   imports: [
     BrowserModule,

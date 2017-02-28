@@ -1,14 +1,36 @@
 <div *ngIf="student" class="container timesheet-box">
 
-
+<div *ngIf="student.status=='in'">
   <div  class="btn-group btn-ts-nav" role="group">
-    <button type="button" class="btn btn-primary btn-ts-student" data-toggle="collapse" [attr.data-target]="'#' + student.id">[IN]&nbsp;&nbsp;&nbsp;{{student.name}}</button>
-    <button type="button" class="btn btn-primary btn-ts-add">Add Time</button>
+    <button type="button" class="btn btn-primary btn-ts-student-in" data-toggle="collapse"
+    [attr.data-target]="'#' + student.id">[IN]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.name}}</button>
+    <button type="button" class="btn btn-primary btn-ts-add"  (click)="addTime()">Add Time</button>
     <button type="button" class="btn btn-primary btn-ts-open" data-toggle="collapse" [attr.data-target]="'#' + student.id"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></button>
   </div>
+</div>
 
-  <div id="{{student.id}}" class="collapse timesheet-form">
-    <app-time-entry-form></app-time-entry-form>
-    <app-time-entry-form></app-time-entry-form>
+<div *ngIf="student.status=='out'">
+  <div  class="btn-group btn-ts-nav" role="group">
+    <button type="button" class="btn btn-primary btn-ts-student-out" data-toggle="collapse"
+    [attr.data-target]="'#' + student.id">[OUT]&nbsp;{{student.name}}</button>
+    <button type="button" class="btn btn-primary btn-ts-add"  (click)="addTime()">Add Time</button>
+    <button type="button" class="btn btn-primary btn-ts-open" data-toggle="collapse" [attr.data-target]="'#' + student.id"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+<div *ngIf="student.status==null">
+  <div  class="btn-group btn-ts-nav" role="group">
+    <button type="button" class="btn btn-primary btn-ts-student-empty" data-toggle="collapse"
+    [attr.data-target]="'#' + student.id">[&nbsp;&nbsp;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.name}}</button>
+    <button type="button" class="btn btn-primary btn-ts-add"  (click)="addTime()">Add Time</button>
+    <button type="button" class="btn btn-primary btn-ts-open" data-toggle="collapse" [attr.data-target]="'#' + student.id"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+
+  <div id="{{student.id}}" class="collapse timesheet-form" [collapse]="expand">
+    <div *ngFor="let i of student.timeentry">
+      <app-time-entry-form [timelog]="i" (timeUpdate)="removeTime($event)"></app-time-entry-form>
+  </div>
   </div>
 </div>
