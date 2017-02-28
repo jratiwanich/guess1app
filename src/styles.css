@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global style for the entire GUESS1App */
+
+	body {
+		line-height: 1;
+		-webkit-text-size-adjust: none;
+    background-color: #3f4042;
+	}
+
+/* Box Model */
+
+	*, *:before, *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	/* Logo */
+	.logo{
+        background-color: rgba(0,0,0,0);
+        background-image: url(//content.guess.com/GuessUS/Frontend/guess/assets/guess_logo.png);
+        background-image: url(//content.guess.com/GuessUS/Frontend/guess/assets/guess_logo.svg);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 5px;
+        color: #000;
+        cursor: auto;
+        float: left;
+        font-size: 14px;
+        height: 29px;
+        letter-spacing: 2.1px;
+        line-height: 50px;
+        margin-right: 25px;
+        margin-top: 10px;
+        max-width: 100%;
+        padding: 0;
+        position: relative;
+        text-decoration: none;
+        width: 122px;
+	}
+
+  .title-bar{
+    background-color: #a3b9f3 !important;
+    height: 50px;
+    width: 100%;
+  }
+
+  .title-section {
+    line-height: 50px;
+    color: #ffffff;
+  }
+
+ a.title-section{
+    color: #ffffff;
+  }
+
+  .debug{
+    border: 0px solid yellow;
+  }

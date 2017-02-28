@@ -1,3 +1,41 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row"  style="margin-top: 30px;">
+    <div class="col-6 debug">
+      <h2 class="calendar-title">SELECT THE DATE : </h2>
+    </div>
+     <div class="col-4 debug">
+      <form class="form-inline calendar-form">
+        <div class="form-group">
+          <div class="input-group calendar-input">
+            <input class="form-control" placeholder="YYYY-MM-DD"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-addon calendar-button" (click)="d.toggle()" >
+              <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer; background-color: #fff;"/>
+            </div>
+          </div>
+        </div>
+      </form>
+  </div>
+  <div class="col-2 debug">
+    <button type="button" class="btn btn-success">EXPAND ALL &nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 30px;">
+   <div class="col debug">
+<!-- <hr/>
+<pre>Model: {{ selectedDate | json }}</pre> -->
+ <!-- <ul class="heroes">
+<li *ngFor="let person of students"
+  [class.selected]="person === selectedStudent"
+  (click)="onSelect(person)">
+  <span class="badge">{{person.id}}</span> {{person.name}}
+</li>
+</ul> -->
+<div *ngFor="let person of students">
+  <app-user-time-sheet [student]="person"></app-user-time-sheet>
+</div>
+
+</div>
+</div>
+</div>

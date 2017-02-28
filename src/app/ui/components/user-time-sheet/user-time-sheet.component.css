@@ -1,0 +1,47 @@
+.timesheet-box{
+  border-bottom: 0px solid #fff;
+  width: 600px;
+  margin-bottom: 10px;
+  padding-left: 0px;
+  -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+}
+
+.timesheet-form{
+  border: 0px solid red;
+  width: 600px;
+
+}
+
+.btn-ts-nav{
+  width: 600px;
+}
+
+.btn-ts-student{
+    width: 70%;
+    text-align: left;
+}
+.btn-ts-student:before {
+    font-family: FontAwesome;
+    top:0;
+    left:5px;
+    padding-right:10px;
+    content: "\f090";
+ }
+
+ .btn-ts-add:before {
+     font-family: FontAwesome;
+     top:0;
+     left:5px;
+     padding-right:10px;
+     content: "\f017";
+  }
+
+.btn-ts-add{
+    width: 20%;
+}
+
+.btn-ts-open{
+    width: 10%;
+}
