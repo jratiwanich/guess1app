@@ -17,6 +17,7 @@ Create an application using any version of Angular2 and whatever libraries.
 * if last record has out time, displays `OUT`.
 * If there is no records entered, display only child name.
 
+
 ###Out of Scope:
 1) No authentication and authorization required.
 2) Page Responsive to mobile devices will not be tested.
