@@ -1,16 +1,25 @@
 #Guess1app
-Create an application using any version of Angular2 and whatever libraries.
+Create an application using any version of Angular2 and whatever libraries to make this App looks nice.
+This App is created by [Jak Ratiwanich][98e89d95]
+
+  [98e89d95]: https://www.linkedin.com/in/jakratiwanich/ "Go to my LinkedIn"
 
 ###Requirements:
 1) Application is uses to enter children in/out times for a day.
+
 2) Data for time entries will be stored on localStorage. Only valid records has to be stored. Records have to be stored right when they became valid.
+
 3) Hardcode list of 10 children.
+
 4) Time entry has the following logic:
 * OUT time must be greater than IN time
 * Next IN Time must be greater that previous OUT time
 * For last entry OUT time is not required.
+
 5) Click on header must set next In or Out time with current time. The button `Add Time` will be used for this functionality.
+
 6) After date change page present previously stored records for changed date.
+
 7) Header of each Timesheet contains :
 * Child or student's name
 * if last record has no out time (or null) display `IN` on the header.
@@ -20,9 +29,10 @@ Create an application using any version of Angular2 and whatever libraries.
 
 ###Out of Scope:
 1) No authentication and authorization required.
+
 2) Page Responsive to mobile devices will not be tested.
 
-###Bonus
+###Bonus features:
 1) When selecting a new date from the calendar, user will be able to add student from a `student dropdown` input box.
 
 #NOTE
